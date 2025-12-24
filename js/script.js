@@ -15,3 +15,36 @@ function ottieniNumeri() {
 
     return { num1, num2 };
 }
+
+// EVENTI SUI PULSANTI //
+document.getElementById("somma").addEventListener("click", () => {
+    const numeri = ottieniNumeri();
+    if (numeri) {
+        risultato.textContent = numeri.num1 + numeri.num2;
+    }
+});
+
+document.getElementById("differenza").addEventListener("click", () => {
+    const numeri = ottieniNumeri();
+    if (numeri) {
+        risultato.textContent = numeri.num1 - numeri.num2;
+    }
+});
+
+document.getElementById("moltiplicazione").addEventListener("click", () => {
+    const numeri = ottieniNumeri();
+    if (numeri) {
+        risultato.textContent = numeri.num1 * numeri.num2;
+    }
+});
+
+document.getElementById("divisione").addEventListener("click", () => {
+    const numeri = ottieniNumeri();
+    if (numeri) {
+        if (numeri.num2 === 0) {
+            risultato.textContent = "Impossibile dividere per zero";
+        } else {
+            risultato.textContent = numeri.num1 / numeri.num2;
+        }
+    }
+});
